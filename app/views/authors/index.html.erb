@@ -1,0 +1,23 @@
+<!-- authors/index.html.erb -->
+<h1>Authors and their Books</h1>
+
+<div class="authors-container">
+  <% @authors.each do |author| %>
+    <div class="author">
+      <h2><%= author.name %></h2>
+      <h3>Books:</h3>
+      <ul class="books-list">
+        <% author.books.each do |book| %>
+          <li>
+            <strong><%= book.title %></strong>
+            <ul class="reviews-list">
+              <% book.reviews.each do |review| %>
+                <li><%= review.content %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
